@@ -1,0 +1,18 @@
+﻿using Booksuggestion.API.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Booksuggestion.API.Data
+{
+    public interface IAppRepository
+    {
+        void Add<T>(T entity) where T:class;
+        void Delete<T>(T entity) where T : class;
+        bool SaveAll();
+        List<Book> GetBooks();
+        Book GetBookByID(int bookid);
+
+    }
+}
